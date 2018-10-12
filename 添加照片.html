@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加照片</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+        }
+        body {
+            font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+            color: #666;
+        }
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .clearfix{
+            *zoom: 1;
+        }
+        .layout {
+            width: 700px;
+            margin: 0 auto;
+        }
+        .layout h1 {
+            margin-top: 18px;
+        }
+        .produce {
+            position: relative;
+            float: left;
+            width: 200px;
+            border: solid 1px #666;
+            padding: 10px 20px;
+            margin-top: 20px;
+            margin-right: 20px;
+            /* margin-bottom: 20px; */
+            text-align: center;
+            background: white;
+        }
+        .produce img {
+            width: 100%;
+            height: 150px;
+        }
+        .btn {
+            border: solid rgb(236, 77, 37) 1px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            background: #fff;
+            color: rgb(236, 77, 37);
+            margin-top: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .cover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0,0,0, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        .produce.hover .cover {
+            opacity: 1;
+        }
+        /* .produce-ct{
+                margin-left: -20px;
+                margin-top: -20px;
+        } */
+        .cover .btn{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .produce-name {
+            text-align: left;
+            margin-top:12px; 
+        }
+        .produce-price {
+            text-align: left;
+            color: rgb(236, 77, 37);
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <h1>珠宝首饰</h1>
+        <ul class="produce-ct clearfix">
+            <li class="produce">
+                <div class="cover">
+                    <a href="#" class="btn action-delete">删除</a>
+                </div>
+                <div>
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530438622837&di=5c36f741a33e47302863f48cd69b9457&imgtype=0&src=http%3A%2F%2Fpic.chinasspp.com%2FNews%2Fu%2F641215%2Fimage%2F201604%2F21085916_7618_s_605x455.jpg" alt="">
+                    <div class="produce-name">真爱加冕系列</div>
+                    <div class="produce-price">￥169900.00</div>                   
+                </div>
+            </li>
+            <li class="produce">
+                <div class="cover">
+                    <a href="#" class="btn action-delete">删除</a>
+                </div>
+                <div>
+                    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530438808146&di=e1a2ea98d7899c86e3b3961d84798d53&imgtype=0&src=http%3A%2F%2Fm.360buyimg.com%2Fn12%2Fjfs%2Ft2593%2F241%2F4082166011%2F117378%2F4c6c7951%2F57aa9344N67c8397c.jpg%2521q70.jpg" alt="">
+                    <div class="produce-name">香颂钻石对戒</div>
+                    <div class="produce-price">￥169900.00</div>                   
+                </div>               
+            </li>
+            <li class="produce">
+                <div class="cover">
+                    <a href="#" class="btn action-delete">删除</a>
+                </div>
+                <div>
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1084118627,3915781267&fm=27&gp=0.jpg" alt="">
+                    <div class="produce-name">戴瑞</div>
+                    <div class="produce-price">￥169900.00</div>                   
+                </div>
+            </li>
+        </ul>
+        <a href="#" class="btn btn-add">添加</a>
+        <a href="#" class="btn btn-edit">编辑</a>
+    </div>
+    <script>
+// function getProdHtml(produce){
+// 	var html = '';
+// 	html += '<li class="produce">';
+// 	html +=   '<div class="cover"><a class="btn action-delete" href="#">删除</a></div>'
+// 	html +=    '<a href="#">'
+// 	html +=      '<img src="'+produce.img+'" alt="">'
+// 	html +=      '<div class="produce-name">'+produce.name+'</div>'
+// 	html +=      '<div class="produce-price">'+produce.price+'</div>'
+// 	html +=    '</a>'
+// 	html += '</li>';
+// 	return html;
+// }
+
+// function getData(){
+//  var results = []
+//  for(var i = 0; i<3; i++){
+//    var rand = Math.floor(Math.random()*100)
+//    var product = 	{
+// 		img: 'http://picsum.photos/200/200/?image='+rand,
+// 		name: 'I DO',
+// 		price: '￥'+rand
+// 	} 
+//    results.push(product)
+//  }
+  
+//   return results
+// }
+// $('.btn-add').on('click', function(e){
+// 	e.preventDefault();
+//     $('.produce').removeClass('hover')
+//     var products = getData()
+// 	$.each(products, function(idx, prod){
+// 		var html = getProdHtml(prod)
+// 		$('.produce-ct').append(html)
+// 	})
+// })
+
+
+// $('.btn-edit').on('click', function(e){
+// 	e.preventDefault();
+//     $('.produce').toggleClass('hover')
+// })
+
+// $('.produce-ct').on('click', '.action-delete', function(e){
+//   e.preventDefault()
+//   $(this).parents('.produce').remove()
+// })
+        function getProdHtml(produce){
+            var html = ''
+            html += '<li class="produce">'
+            html += '<div class="cover"><a class="btn action-delete">删除</a></div>'
+            html += '<div>'
+            html += '<img src="'+produce.img+'" alt="">'
+            html += '<div class="produce-name">'+produce.name+'</div>'
+            html += '<div class="produce-price">'+produce.price+'</div>'
+            html += '</li>'
+            return html
+        }
+        function getData(){
+            var results = []
+            for(i = 0; i < 3; i++){
+                var rand = Math.floor(Math.random()*100)
+                produce = {
+                    img: 'http://picsum.photos/200/200/?image='+rand,
+ 		            name: 'I DO',
+ 		            price: '￥'+rand
+                }
+                results.push(produce)
+            }
+            return results
+        }
+        $('.btn-add').on('click',function(){
+            $('.produce').removeClass('hover')
+            var produces = getData()
+            $.each(produces,function(index,produce){
+                var html = getProdHtml(produce)
+                $('.produce-ct').append(html)
+            })
+        })
+        $('.btn-edit').on('click',function(){
+            $('.produce').toggleClass('hover')
+        })
+        $('.produce-ct').on('click','.action-delete',function(e){
+            // console.log(this)
+            // e.preventDefault()
+            $(this).parents('.produce').remove()
+        })
+
+    </script>
+</body>
+</html>

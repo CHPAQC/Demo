@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            .father{
+                width: 600px;
+                margin: 20px auto 0;
+                box-shadow: 0px 3px 4px 2px rgba(0,0,0, 0.4);
+                background-color: beige;
+                border-radius: 8px;
+            }
+
+            .father>ul>li{
+                float: left;
+                position: relative;
+            }
+            .father::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            .father .page{
+                position: absolute;
+                box-shadow: 0px 3px 4px 2px rgba(0,0,0, 0.4);
+                top:100%;
+                display: none;
+                background-color: antiquewhite;
+                border-radius: 8px;
+            }
+            .father>ul>li:hover .page{
+                display: block;
+            }
+            nav a{
+                padding: 12px ;
+                display: block;
+            }
+            nav a:hover{
+                background-color: cadetblue;
+                color: #fff;
+            }
+            .page a{
+                min-width:200px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="father">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">更多</a>
+                    <ul class="page">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">博客</a></li>
+                        <li><a href="#">知乎</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        
+    </body>
+</html>

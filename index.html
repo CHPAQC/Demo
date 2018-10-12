@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度知道</title>
+    <style>
+        body { 
+  margin: 0; 
+  font-family: 'Source Code Pro', monospace;
+}
+
+nav { 
+  width: 680px;
+  margin: auto;
+}
+
+ul {
+  padding: 0;
+  overflow: hidden;
+  list-style: none; 
+}
+
+ul > li { 
+  float: left;
+}
+
+ul > li > a {
+  color: white;
+  width: 170px;
+  height: 50px;
+  display: block;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+ul > li > a:hover {
+  font-size: 24px;
+}
+
+ul > li:nth-child(1) > a {
+  background: deepskyblue;
+}
+
+ul > li:nth-child(2) > a {
+  background: limegreen;
+}
+
+ul > li:nth-child(3) > a {
+  background: darkorange;
+}
+
+ul > li:nth-child(4) > a {
+  background: blueviolet;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">HTTP</a></li>
+        </ul>
+    </nav>
+    <div class="login">
+        <form action="ADB" method="POST">
+         <div class="username">
+             <label for="username">姓名</label>
+             <input type="text" name="username" id="username" placeholder="用户名">
+         </div>
+         <div class="password">
+             <label for="password">密码</label>
+             <input type="password" name="password" id="password" placeholder="密码" >
+         </div>
+         <div class="sex">
+             <label>性别</label>
+             <input type="radio" name="sex" value="男"> 男
+             <input type="radio" name="sex" value="女"> 女
+         </div>
+         <div class="orientation">
+             <label>取向</label>
+             <input type="radio" name="orientation" value="男"> 男 
+             <input type="radio" name="orientation" value="女"> 女
+         </div>
+         <div class="hobby">
+             <label>爱好</label>
+            <input type="checkbox" checked name="hobby" value="dota"> dota
+            <input type="checkbox" checked name="hobby" value="tourism"> 旅游
+            <input type="checkbox" name="hobby" value="pet"> 宠物
+            <div class="textarer">
+             <label for="article">评论:</label>
+                <textarea name="article" id="article">ddd</textarea>
+            </div>
+            <div class="submit" class="select">
+                <label>我的car:</label>
+                <select name="car">
+                        <option value="sabo" selected>萨博</option>
+                        <option value="passte">帕萨特</option>
+                        <option value="x6">x6</option>
+                        <option value="760">760</option>
+                </select>        
+                <button>提交</button>
+            </div>
+         </div>
+
+        </form>
+    </div>
+    <div>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=363319&auto=1&height=66"></iframe>
+    </div>
+</body>
+</html>

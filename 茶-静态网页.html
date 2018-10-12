@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_666808_ohyhgdf3yz4zpvi.css">
+  <title>茶小姐</title>
+  <style>
+    /* reset */
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    ul { 
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* common css */
+    .clearfix::after {
+    content: '';
+    display: block;
+    clear: both; 
+    }
+    .button {
+      border-radius: 5px;
+      background-color: hsl(29, 72%, 70%);
+      color: bisque;
+      font-size: 32px;
+      padding: 6px 58px;
+      display: inline-block;
+      opacity: 1;
+    }
+    .button:hover {
+      opacity: 0.6;
+    }
+    body {
+      font: 16px/1.5 Arial;
+      background-color: bisque;
+      color: #333;
+    }
+    .layout {
+      min-width: 980px;
+      margin: 0 auto;
+    }
+    html,body{
+      height: 100%
+    } 
+    header {
+      height: 100%;
+      background: chocolate url(http://img.zcool.cn/community/01a2595a4c7ae2a801219741ac44f1.png@1280w_1l_2o_100sh.png) center center no-repeat;   
+      background-size: cover; 
+      min-height: 600px;
+      position: relative;
+    }
+    .logo {
+      color: chocolate;
+      font-weight: bold;
+      font-size: 60px;
+      float: left;
+    }
+    header .nav {
+      float: right;
+    }
+    header .nav > li {
+      float: left; 
+    }
+    header .nav li > a {
+      display: inline-block;
+      color: burlywood;
+      padding: 6px 12px;
+      margin: 12px 12px;
+      border-radius: 6px; 
+    }
+    header .nav > li > a:hover {
+      background-color: hsl(29, 72%, 70%);
+      color: coral;
+    }
+    .motive{
+      text-align: center;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .motive h1 {
+      font-size: 48px;
+    }
+    .motive h2 {
+      font-size: 32px;
+      margin-top: 8px;
+    }
+    .motive .button {
+      margin-top: 88px; 
+    }
+    section {
+      text-align: center;
+      margin-top: 36px;
+    }
+    section > h1 {
+      font-size: 38px;
+      padding-bottom: 30px;  
+    }
+    section > p {
+      font-size: 16px;
+      padding-bottom: 48px; 
+      font-size: 26px;
+      color: lightslategrey;
+    }
+    .tea-set-intro ul li {
+      float: left;
+      width: 33.3333%;
+      padding: 20px;
+    }
+    section .iconfont {
+      font-size: 88px;
+    }
+    section ul p {
+      margin-top: 30px; 
+    }
+    .tea-type ul li {
+    float: left;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 32%;
+    }
+    .tea-type ul a {
+      display: block;
+      height: 230px;
+    }
+    .tea-type ul li img {
+      width: 100%;
+      height: 100%;
+    }
+    .tea-type li > h4 {
+      font-size: 36px;
+      margin: 20px 0;
+      color: chocolate;
+    }
+    .tea-type li > p {
+      font-weight: bold;
+      color: dimgrey
+    }
+    .make-tea-timeline img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      border: 5px solid rgb(221, 141, 95);
+    }
+    .make-tea-timeline > li::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .make-tea-timeline > li {
+      margin-top: 50px; 
+      position: relative;
+    }
+    .make-tea-timeline > li:nth-child(odd) {
+      padding-right: 44%;
+      text-align: right;
+    } 
+    .make-tea-timeline > li:nth-child(odd) dl {
+      margin-right: 220px;
+    } 
+    .make-tea-timeline > li:nth-child(odd) img {
+      float: right;
+    } 
+     .make-tea-timeline > li:nth-child(even) {
+      padding-left: 46%;
+      text-align: left; 
+    }
+    .make-tea-timeline > li:nth-child(even) dl {
+      margin-left: 220px;
+    }
+    .make-tea-timeline > li:nth-child(even) img {
+      float: left;
+    } 
+    .make-tea-timeline dt {
+      font-weight: bold;
+      font-size: 26px;
+      color: dimgray;
+    }
+    .make-tea-timeline dd {
+      color: dimgray;
+    }
+    .make-tea-timeline li::before {
+      content: '';
+      display: inline-block;
+      height: 160px;
+      width: 1px;
+      background-color: rgb(221, 141, 95);
+      position: absolute;
+      top: 100px;
+    }
+    .make-tea-timeline li:last-child::before{
+      height: 0;
+    }
+    .notes {
+      padding: 12px 12px;
+      margin-top: 26px;
+      background-color: coral;
+      font-size: 26px; 
+      display: inline-block;
+      font-weight: bold;
+    }
+    .tea-boss > li {
+      float: left;
+      width: 50%;
+    }
+    .tea-boss > li > a {
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .tea-boss span {
+      font-size: 28px;
+      padding: 20px;
+      color: gray;
+    }
+    .tea-boss span:hover {
+      color: coral;
+    }
+    .tea-boss li > p {
+      font-size: 16px;
+      font-weight: bold;
+      color: chocolate;
+    }
+    .tea-boss li > img {
+      height: 260px;
+      width: 200px;
+      border-radius: 50%; 
+    }
+    .input-box input {
+      width: 400px;
+      height: 50px;
+      border-radius: 6px;
+      font-size: 20px;
+      margin-bottom: 20px; 
+    }
+    .article textarea {
+      width: 400px;
+      height: 190px;
+      border-radius: 6px;
+      font-size: 25px;
+    } 
+    footer {
+      height: 100%;
+      background: chocolate url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1964888173,2282228431&fm=200&gp=0.jpg) center center no-repeat;   
+      background-size: cover;
+      min-height: 600px;
+      margin-top: 80px;
+      text-align: center;      
+    }
+    footer .button {
+      font-size: 26px;
+      font-weight: bold;
+      color: dimgray;
+      background-color: rgb(180, 148, 126);
+    }
+    .input-box-end {
+      padding-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar layout clearfix">
+      <a class="logo" href="#">茶小姐</a>
+      <ul class="nav">
+        <li><a href="#">介绍</a></li>
+        <li><a href="#">初期发展</a></li>
+        <li><a href="#">过程</a></li>
+        <li><a href="#">目标</a></li>
+        <li><a href="#">更多</a></li>
+      </ul>
+    </div>
+    <div class="motive">
+        <h1>茶</h1>
+        <h2>种茶我们是用心的，卖茶我们认真的</h2>
+        <a class="button" href="#">茶小姐的茶园</a>
+    </div>
+  </header>
+  <div class="main layout">
+    <section class="tea-set-intro">
+      <h1>茶具</h1>
+      <p>现代人所说的“茶具”主要指茶壶、茶杯、茶勺等这类饮茶器具</p>
+      <ul class="clearfix">
+        <li>
+          <span class="iconfont icon-teaspoon"></span>
+          <h3>茶勺</h3>
+          <p>茶勺（Teaspoon）是细长柄的，勺的容量比较小，长柄是为了能够在深的茶叶筒内舀取茶叶；勺的容量小，是为了能够掌握舀取茶叶的数量</p>
+        </li>
+        <li>
+          <span class="iconfont icon-teacup"></span>
+          <h3>茶杯</h3>
+          <p>茶杯（Teacup）是盛茶水的用具，水从茶壶而来，倒进茶杯，之后给客人品尝茶水。茶杯分大小两种：小杯主要用于乌龙茶的品啜，亦叫品茗杯，是与闻香杯配合使用</p>
+        </li>
+        <li>
+          <span class="iconfont icon-teapot"></span>
+          <h3>茶壶</h3>
+          <p>茶壶（Teapot）是一种泡茶和斟茶用的带嘴器皿。它是茶具的一种，主要用来泡茶。茶壶由壶盖、壶身、壶底、圈足四部分组成，壶盖有孔、钮、座、盖等细部。壶身有口、延（唇墙）、嘴、流、腹、肩、把（柄、扳）等部分</p>
+        </li>
+      </ul>
+    </section>
+    <section class="tea-type">
+      <h1>茶的种类</h1>
+      <p>茶的种类大约分为以下六种，它们有着不同的功效</p>
+      <ul class="clearfix">
+        <li>
+          <a href="#"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3351083750,1112515362&fm=27&gp=0.jpg" alt=""></a>
+          <h4>绿茶</h4>
+          <p>绿茶（Green Tea）是中国的主要茶类之一，是指采取茶树的新叶或芽，未经发酵，经杀青、整形、烘干等工艺而制作的饮品。其制成品的色泽和冲泡后的茶汤较多的保存了鲜茶叶的绿色格调。常饮绿茶能防癌，降脂和减肥，对吸烟者也可减轻其受到的尼古丁伤害</p>
+        <li>
+          <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526649810695&di=da1f7a06f5033d3020200d7f09c1526d&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dpixel_huitu%252C0%252C0%252C294%252C40%2Fsign%3D615d19c0dac8a786aa27424e0e71ac51%2F50da81cb39dbb6fd16245c1c0224ab18972b3788.jpg" alt=""></a>
+          <h4>红茶</h4>
+          <p>红茶（Black tea）红茶在加工过程中发生了以茶多酚酶促氧化为中心的化学反应，鲜叶中的化学成分变化较大，茶多酚减少90%以上，产生了茶黄素、茶红素等新成分。香气物质比鲜叶明显增加。所以红茶具有红茶、红汤、红叶和香甜味醇的特征</p>
+        </li>
+        <li>
+          <a href="#"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=407957716,2661392612&fm=27&gp=0.jpg" alt=""></a>
+          <h4>黄茶</h4>
+          <p>黄茶是中国特产。其按鲜叶老嫩芽叶大小又分为黄芽茶、黄小茶和黄大茶。黄芽茶主要有君山银针、蒙顶黄芽和霍山黄芽、远安黄茶；如沩山毛尖、平阳黄汤、雅安黄茶等均属黄小茶。三峡库区蓄水以后，秭归山区常年雾气笼罩，形成了独具特色的秭归黄茶，也属于黄小茶</p>          
+        </li>
+        <li>
+          <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526650030851&di=86ffb5c56235fd3593dc388f9d327577&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F201611_26_18%2Fa9xhve1953782067325.jpeg" alt=""></a>
+          <h4>黑茶</h4>
+          <p>黑茶（dark tea），因成品茶的外观呈黑色，故得名。黑茶属于六大茶类之一，属后发酵茶，主产区为四川、云南、湖北、湖南、陕西、安徽等地。传统黑茶采用的黑毛茶原料成熟度较高，是压制紧压茶的主要原料</p>
+        </li>
+        <li>
+          <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527244826&di=ea1efa745018a18e8cae7c9037a5d52d&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.tiexing.net%2Fimages%2Fzx%2F114new%2F201601%2F20160126102448280_349.jpg" alt=""></a>
+          <h4>乌龙茶</h4>
+          <p>乌龙茶（oolong tea），亦称青茶、半发酵茶及全发酵茶，品种较多，是中国几大茶类中，独具鲜明中国特色的茶叶品类。乌龙茶是经过采摘、萎凋、摇青、炒青、揉捻、烘焙等工序后制出的品质优异的茶类</p>
+        </li>
+        <li>
+          <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526650186416&di=5076e49872bb300d0e2288156f9ff1cd&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D3371197%2C1374640964%26fm%3D214%26gp%3D0.jpg" alt=""></a>
+          <h4>白茶</h4>
+          <p>白茶，属微发酵茶，是中国茶农创制的传统名茶。中国六大茶类之一。指一种采摘后，不经杀青或揉捻，只经过晒或文火干燥后加工的茶。具有外形芽毫完整，满身披毫，毫香清鲜，汤色黄绿清澈，滋味清淡回甘的的品质特点。 属轻微发酵茶，是中国茶类中的特殊珍品。因其成品茶多为芽头，满披白毫，如银似雪而得名</p>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1>泡茶</h1>
+      <p>在中国茶文化中种泡茶是一门学问</p>
+      <ul  class="make-tea-timeline">
+        <li>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526654032845&di=30393b0645cdeff546f54d76b61dffec&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170813%2Fc1ebbab19f754dda84c8c4405d5b2862_th.png" alt="">
+          <dl>
+            <dt>一、温杯</dt>
+            <dd>将茶杯洗净，用开水稍微烫过。此为温杯</dd>
+          </dl>
+        </li>
+        <li>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527248809&di=bf20ed4a5b1b152bcc9953b602d05d6b&imgtype=jpg&er=1&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20170915%2Ffdb023ed42504feba2279f5ea14c95e9.jpg" alt="">
+            <dl>
+              <dt>二、醒茶</dt>
+              <dd>将茶叶放入高温烫过的茶杯中，用85摄氏度的开水冲泡，水量盖过茶叶稍多一些即可。等茶叶舒展片刻，将水倒掉。这一步有何意义呢？其目的是使茶叶完全苏醒过来，重新焕发出茶叶的本质。并且茶叶中的一些杂质，碎末，此时也随之流出，使得下一步冲泡的茶质将更清新，洁净</dd>
+            </dl>
+        </li>
+        <li>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526654138064&di=76ff374595d5b663dea6e9faf9d6b356&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161226%2F2da9ae2618884d2985d755afcc6d24ae_th.jpg" alt="">
+            <dl>
+              <dt>三、冲泡</dt>
+              <dd>可适当提高水壶的位置，由上而下，水流如瀑布一般落入杯中，叫杯底的茶叶泡个澡。注意泡茶的水温80-90度为好</dd>
+            </dl>
+        </li>
+        <li>
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1527248906&di=d47eb6174b071aedbb3392e771587dbd&imgtype=jpg&er=1&src=http%3A%2F%2Fsimg.dahe.cn%2F2016%2F5%2F3%2F2fe7c2c97cc3a4db.jpg" alt="">
+            <dl>
+              <dt>四、赏茶</dt>
+              <dd>刚刚泡好的茶温度过高，此时不宜牛饮，先仔细欣赏一番，闻其香，观其色，形之变化</dd>
+            </dl>
+        </li>
+        <li>
+            <img src="https://wx3.sinaimg.cn/mw690/0064etGZgy1frgq3nndv5j30e60e5dpc.jpg" alt="">
+            <dl>
+              <dt>五、饮茶</dt>
+              <dd>待茶汤凉至适口，且慢慢品尝</dd>
+            </dl>
+        </li>
+      </ul>
+      <div class="notes">想买茶的朋友可以加店长微信哦！我们做的是健康绿色的茶叶，朋友们可以放心购买，无论是送长辈、上司还是朋友，都是你们不错的选择。并且我们在包装上可以根据朋友们的喜好来包装哦</div>
+    </section>
+    <section>
+        <h1>店长信息</h1>
+        <p>茶小姐是由一对大学恋人携手创办，目前还属于规划期，但一点不影响大家购买我们的优质茶叶哦！</p>
+        <ul class="tea-boss clearfix">
+          <li><img src="https://wx1.sinaimg.cn/mw690/0064etGZgy1frgpdd1qz2j30a10dcjto.jpg" alt="">
+            <h2>邱城</h2>
+            <p>毕业于安徽农业大学茶文化专业</p>
+            <a href="#"><span class="iconfont icon-bird"></span></a>
+            <a href="#"><span class="iconfont icon-wechat"></span></a>
+            <a href="#"><span class="iconfont icon-qq"></span></a>
+          </li>
+          <li><img src="https://wx1.sinaimg.cn/mw690/0064etGZgy1frgpdez3hej30a00data2.jpg" alt="">
+            <h2>蔡华鹏</h2>
+            <p>学校不提也罢，获得SOLIDWORKS证书</p>
+            <a href="#"><span class="iconfont icon-bird"></span></a>
+            <a href="#"><span class="iconfont icon-wechat"></span></a>
+            <a href="#"><span class="iconfont icon-qq"></span></a>
+          </li>
+        </ul>
+    </section>
+  <footer>
+    <div class="input-box-end">
+      <div class="input-box">
+        <div class="username">
+          <input type=" text" name="username" id="username" placeholder="Your name">
+        </div>
+        <div class="e-mail">
+            <input type=" text" name="e-mail" id="e-mail" placeholder="Your e-mail">
+        </div>
+        <div class="password">
+            <input type="password" name="password" id="password" placeholder="Your password">
+        </div>
+      </div>
+      <div class="article clearfix">
+          <textarea name="article" id="action" placeholder="Your suggestions"></textarea>
+      </div>
+    </div>
+    <a class="button" href="#">注册会员</a>
+    <a class="button" href="#">登录</a>
+  </footer>
+</body>
+</html>

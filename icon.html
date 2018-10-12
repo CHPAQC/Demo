@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_666808_7z0jav6a86m.css">
+    <title>Icon</title>
+</head>
+<body>
+    <span><i class="iconfont icon-pause" style="color: red; font-size: 58px;"></i></span>
+</body>
+<script>
+    document.querySelector('.iconfont').onclick = function(){
+        if(document.querySelector('.iconfont').classList.contains('icon-pause')){
+            document.querySelector('.iconfont').classList.remove('icon-pause')
+            document.querySelector('.iconfont').classList.add('icon-play')
+        }else{
+            document.querySelector('.iconfont').classList.add('icon-pause')
+            document.querySelector('.iconfont').classList.remove('icon-play')
+        }
+    }
+</script>
+</html>
